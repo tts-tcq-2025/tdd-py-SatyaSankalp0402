@@ -1,9 +1,9 @@
 import unittest
 from String_Calculator import add
 
-class StringCalculatorTests(unittest.TestCase)
+class StringCalculatorTests(unittest.TestCase):
   def test_empty_string_returns_zero(self):
     self.assertEqual(add(""),0)
 
-if __name__ == "__main__:
+if __name__ == "__main__":
   unittest.main()
