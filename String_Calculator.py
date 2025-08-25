@@ -1,2 +1,2 @@
-def add(numbers: str) -> int:
+def add(numbers):
   return 0
