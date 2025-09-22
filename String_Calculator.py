@@ -3,11 +3,11 @@ def add(numbers):
     return 0
   delimeters = [",", "\n"]
   if numbers.startswith("//"):
-    delimiter_line, newnumbers = numbers.split("\n", 1)
+    delimiter_line, numbers = numbers.split("\n", 1)
     custom_delimiter = delimiter_line[2:]  # skip //
     delimeters = [custom_delimiter]
   for index in delimeters:
-    actualnumbers=newnumbers.replace(index,",")
+    actualnumbers=numbers.replace(index,",")
   parts = actualnumbers.split(",")
   return sum(int(x) for x in parts)
   
