@@ -8,7 +8,7 @@ class StringCalculatorTests(unittest.TestCase):
     self.assertEqual(add("1"), 1)
   def test_two_numbers_comma_separated_returns_sum(self):
     self.assertEqual(add("1,2"), 3)
-   def test_multiple_numbers_returns_sum(self):
+  def test_multiple_numbers_returns_sum(self):
     self.assertEqual(add("1,2,3"), 6)
      
 if __name__ == "__main__":
