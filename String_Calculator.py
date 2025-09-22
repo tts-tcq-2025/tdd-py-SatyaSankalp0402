@@ -1,14 +1,11 @@
 def add(numbers):
   if numbers == "":
     return 0
-  delimeters = [",", "\n"]
   if numbers.startswith("//"):
     delimiter_line, numbers = numbers.split("\n", 1)
-    custom_delimiter = delimiter_line[2:]  # skip //
-    delimeters = [custom_delimiter]
-  for index in delimeters:
-    actualnumbers=numbers.replace(index,",")
-  parts = actualnumbers.split(",")
-  return sum(int(x) for x in parts)
-  
+    delimiter = delimiter_line[2:]
+    numbers = numbers.replace(delimiter, ",")
+  else:
+    numbers = numbers.replace("\n", ",")
+  return sum(int(x) for x in numbers.split(","))
 
