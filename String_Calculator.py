@@ -1,4 +1,6 @@
 def add(numbers):
   if numbers == "":
     return 0
-  return int(numbers)
+  if "," in numbers:
+    parts = numbers.split(",")
+    return int(parts[0]) + int(parts[1])
