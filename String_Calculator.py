@@ -1,7 +1,7 @@
 def add(numbers):
   if numbers == "":
     return 0
-  numbers, delimiter = extract_delimeter(numbers)
+  numbers, delimeter = extract_delimeter(numbers)
   tokens= split_numbers(numbers,delimeter)
   values= integer_converter(tokens)
   check_negatives(values)
