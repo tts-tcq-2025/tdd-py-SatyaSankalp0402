@@ -14,6 +14,11 @@ class StringCalculatorTests(unittest.TestCase):
     self.assertEqual(add("1\n2,3"), 6)
   def test_custom_delimiter_semicolon(self):
     self.assertEqual(add("//;\n1;2"), 3)
-     
+  def test_negative_raise_exception(self):
+    with self.assertRaises(ValueError) as context:
+      calc.add("1,-2,3,-4")
+    self.assertIn("negatives not allowed", str(context.exception))
+    self.assertIn("-2", str(context.exception))
+    self.assertIn("-4", str(context.exception))
 if __name__ == "__main__":
   unittest.main()
