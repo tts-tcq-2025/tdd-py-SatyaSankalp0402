@@ -16,7 +16,7 @@ class StringCalculatorTests(unittest.TestCase):
     self.assertEqual(add("//;\n1;2"), 3)
   def test_negative_raise_exception(self):
     with self.assertRaises(ValueError) as context:
-      calc.add("1,-2,3,-4")
+      add("1,-2,3,-4")
     self.assertIn("negatives not allowed", str(context.exception))
     self.assertIn("-2", str(context.exception))
     self.assertIn("-4", str(context.exception))
