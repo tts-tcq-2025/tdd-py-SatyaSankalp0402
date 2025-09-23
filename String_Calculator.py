@@ -5,7 +5,7 @@ def add(numbers):
   tokens= split_numbers(numbers,delimeter)
   values= integer_converter(tokens)
   check_negatives(values)
-  return sum(values)
+  return calculated_total(values)
 
 def extract_delimeter(numbers):
   if numbers.startswith("//"):
@@ -27,6 +27,6 @@ def check_negatives(values):
   if negatives:
     raise ValueError(f"negatives not allowed:{negatives}")
 
-def sum(values):
+def calculated_total(values):
   return sum(x for x in values if x<=1000)
   
