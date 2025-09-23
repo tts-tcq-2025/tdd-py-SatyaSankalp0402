@@ -7,5 +7,8 @@ def add(numbers):
     numbers = numbers.replace(delimiter, ",")
   else:
     numbers = numbers.replace("\n", ",")
-  return sum(int(x) for x in numbers.split(","))
+  parts=[int(x) for x in numbers.split(",") if x]
+  if negatives:
+    raise ValueError(f"negatives not allowed:{negatives}")
+  return sum(x for x in parts if x<=1000)
 
