@@ -16,7 +16,7 @@ def extract_delimeter(numbers):
 def split_numbers(numbers,delimeter):
   numbers = numbers.replace("\n", ",")
   if delimeter != ",":
-    numbers = numbers.replace(delimiter, ",")
+    numbers = numbers.replace(delimeter, ",")
   return [x for x in numbers.split(",") if x]
 
 def integer_converter(tokens):
