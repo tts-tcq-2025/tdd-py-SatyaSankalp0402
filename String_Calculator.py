@@ -27,10 +27,13 @@ def split_numbers(numbers,delimeter):
 def integer_converter(tokens):
   return [int(x) for x in tokens]
 
+def is_negative(x):
+    return x < 0
+
 def check_negatives(values):
-  negatives = [x for x in values if x < 0]  
-  if negatives: 
-    raise ValueError(f"negatives not allowed:{negatives}")
+    negatives = list(filter(is_negative, values)) 
+    if negatives:  
+        raise ValueError(f"negatives not allowed:{negatives}")
     
 def calculated_total(values):
   return sum(x for x in values if x<=1000)
