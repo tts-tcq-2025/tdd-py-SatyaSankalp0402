@@ -20,18 +20,21 @@ def extract_delimeter(numbers):
 
 def split_numbers(numbers,delimeter):
   numbers = numbers.replace("\n", ",")
-  if delimeter != ",":
-    numbers = numbers.replace(delimeter, ",")
-  return [x for x in numbers.split(",") if x]
-
+  if delimiter != ",":
+    numbers = numbers.replace(delimiter, ",")
+  return numbers.split(",")
+  
 def integer_converter(tokens):
   return [int(x) for x in tokens]
 
 def check_negatives(values):
-  negatives = [x for x in values if x<0]
+  negatives = []
+  for v in values:
+    if v < 0:
+      negatives.append(v)
   if negatives:
-    raise ValueError(f"negatives not allowed:{negatives}")
-
+        raise ValueError(f"negatives not allowed:{negatives}")
+    
 def calculated_total(values):
   return sum(x for x in values if x<=1000)
   
