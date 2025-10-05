@@ -10,6 +10,9 @@ def add(numbers):
 def extract_delimeter(numbers):
   if numbers.startswith("//"):
     delimiter_line, numbers = numbers.split("\n", 1)
+    match = re.match(r"//\[(.*)\]", delimiter_line)
+    if match:
+      return numbers, match.group(1)
     return numbers, delimiter_line[2:]
   return numbers, ","
 
