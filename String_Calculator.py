@@ -28,12 +28,9 @@ def integer_converter(tokens):
   return [int(x) for x in tokens]
 
 def check_negatives(values):
-  negatives = []
-  for v in values:
-    if v < 0:
-      negatives.append(v)
-  if negatives:
-        raise ValueError(f"negatives not allowed:{negatives}")
+  negatives = [x for x in values if x < 0]  
+  if negatives: 
+    raise ValueError(f"negatives not allowed:{negatives}")
     
 def calculated_total(values):
   return sum(x for x in values if x<=1000)
