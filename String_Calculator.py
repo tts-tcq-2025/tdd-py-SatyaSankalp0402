@@ -20,8 +20,8 @@ def extract_delimeter(numbers):
 
 def split_numbers(numbers,delimeter):
   numbers = numbers.replace("\n", ",")
-  if delimiter != ",":
-    numbers = numbers.replace(delimiter, ",")
+  if delimeter != ",":
+    numbers = numbers.replace(delimeter, ",")
   return numbers.split(",")
   
 def integer_converter(tokens):
