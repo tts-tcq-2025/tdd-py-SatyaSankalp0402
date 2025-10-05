@@ -20,5 +20,12 @@ class StringCalculatorTests(unittest.TestCase):
     self.assertIn("negatives not allowed", str(context.exception))
     self.assertIn("-2", str(context.exception))
     self.assertIn("-4", str(context.exception))
+  def test_numbers_ignoring_greater_than_1000(self):
+    self.assertEqual(add("2,1001"), 2)
+    self.assertEqual(add("1000,1001,2"), 1002)
+
+  def test_multi_character_delimiter(self):
+    self.assertEqual(add("//[***]\n1***2***3"), 6)
+    self.assertEqual(add("//[%%]\n4%%5%%6"), 15)
 if __name__ == "__main__":
   unittest.main()
