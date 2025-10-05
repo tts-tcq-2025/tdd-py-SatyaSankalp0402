@@ -1,3 +1,4 @@
+import unittest
 from StringCalculator import add
 
 class StringCalculatorTests(unittest.TestCase):
